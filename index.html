@@ -11,7 +11,9 @@
   
   			//Android
   			if (window.android != undefined) {
-        		window.android.getContacts();
+  			
+  			    window.android.getOneContact(document.getElementById("name").value);
+        		//window.android.getContacts();
             }
         }
         function contactCount(count) {
@@ -67,8 +69,15 @@
     </script>
 	<body>
     	<h1 id="title">Zelle Sdk</h1>
+
+		<div>
+		    <label for="name">Name:</label>
+		    <input type="value" id="name" placeholder="Enter name" name="name">
+		  </div>
+
 		<button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
 		<br><br>
+		
         <button type="button" onclick="scanQRCode()">Scan QR Code</button>
         <br><br>
 		<button type="button" onclick="dismissPopup()">Dismiss Popup</button>
