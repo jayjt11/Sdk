@@ -3,7 +3,7 @@
       	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 	<script>
-    	function getContactsFromNativeCode() {  
+    	function getSingleContactFromNativeCode() {  
   			//iOS
   			if (window.webkit != undefined) {
         		window.webkit.messageHandlers.getContacts.postMessage({});
@@ -13,9 +13,21 @@
   			if (window.android != undefined) {
   			
   			    window.android.getOneContact(document.getElementById("name").value);
-        		window.android.getContacts();
             }
         }
+
+        function getContactsFromNativeCode() {  
+        //iOS
+        if (window.webkit != undefined) {
+            window.webkit.messageHandlers.getContacts.postMessage({});
+            }
+  
+        //Android
+        if (window.android != undefined) {
+            window.android.getContacts();
+            }
+        }
+
         function contactCount(count) {
 			setTitle(count + ' Contact(s)')
         }
@@ -94,8 +106,11 @@
 		    <input type="value" id="name" placeholder="Enter name" name="name">
 		  </div>
 
-		<button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
-		<br><br>
+    		<button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
+    		<br><br>
+
+        <button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
+        <br><br>
 		
         <button type="button" onclick="scanQRCode()">Scan QR Code</button>
         <br><br>
