@@ -37,6 +37,22 @@
             }
         }
 
+
+         // scanning QR code from camera
+        function selectQRCodeFromPhotos() {  
+        //iOS
+        if (window.webkit != undefined) {
+            window.webkit.messageHandlers.scanQRCode.postMessage({});
+            }
+  
+        //Android
+        if (window.android != undefined) {
+            window.android.selectQRCodeFromPhotos();
+            }
+        }
+
+
+
         function callbackOneContact(obj) {
         setTitle(obj.name);
         }
@@ -84,6 +100,11 @@
 		
         <button type="button" onclick="scanQRCode()">Scan QR Code</button>
         <br><br>
+
+
+        <button type="button" onclick="selectQRCodeFromPhotos()">Scan QR Code</button>
+        <br><br>
+
 		<button type="button" onclick="dismissPopup()">Dismiss Popup</button>
     	<script> titleToColor('Green') </script>
 	</body>
