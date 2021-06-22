@@ -73,6 +73,8 @@
         }
         
         function callbackContacts(obj) {
+          window.alert("All Contacts");
+
 			if (obj.cached) {
 				setTitle(cachedContacts.length);
 			} else {
@@ -101,10 +103,11 @@
 	<body>
     	<h1 id="title">Zelle Sdk</h1>
 
-		<div>
+		    <div>
 		    <label for="name">Name:</label>
 		    <input type="value" id="name" placeholder="Enter name" name="name">
-		  </div>
+  		  </div>
+        <br><br>
 
     		<button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
     		<br><br>
@@ -114,7 +117,6 @@
 		
         <button type="button" onclick="scanQRCode()">Scan QR Code</button>
         <br><br>
-
 
         <button type="button" onclick="selectQRCodeFromPhotos()">Scan QR Code From Photos</button>
         <br><br>
