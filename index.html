@@ -36,6 +36,10 @@
         		window.android.scanQRCode();
             }
         }
+
+        function callbackOneContact(obj) {
+        setTitle(obj.name);
+        }
         
         function callbackQRCode(obj) {
 			setTitle(obj.qrCode);
