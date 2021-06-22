@@ -69,11 +69,11 @@
         }
         
         function callbackQRCode(obj) {
-			setTitle(obj.qrCode);
+			 setTitle(obj.qrCode);
         }
         
         function callbackContacts(obj) {
-          window.alert("All Contacts");
+          setTitle('All Contacts');
 
 			if (obj.cached) {
 				setTitle(cachedContacts.length);
