@@ -49,6 +49,20 @@
             }
         }
 
+        // take photo from camera
+
+        function takePhotoFromCamera() {  
+        //iOS
+        if (window.webkit != undefined) {
+            window.webkit.messageHandlers.scanQRCode.postMessage({});
+            }
+  
+        //Android
+        if (window.android != undefined) {
+            window.android.takePhoto();
+            }
+        }
+
 
          // scanning QR code from camera
         function selectQRCodeFromPhotos() {  
@@ -119,6 +133,9 @@
         <br><br>
 
         <button type="button" onclick="selectQRCodeFromPhotos()">Scan QR Code From Photos</button>
+        <br><br>
+
+        <button type="button" onclick="takePhotoFromCamera()">Take a Photo</button>
         <br><br>
 
 		<button type="button" onclick="dismissPopup()">Dismiss Popup</button>
