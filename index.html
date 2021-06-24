@@ -20,20 +20,7 @@
 
         // Callback Single Contact
         function callbackOneContact(obj) {
-
-          if (obj != undefined) {
-
-          } else {
-
-         // setTitle(obj.contact);
-
-          var result = obj.contact
-
-
-          var contactName = document.getElementById("contactname");
-          contactName.innerHTML = result;
-
-          }
+        setTitle(obj.contact);
         }
 
         // All Contacts
@@ -112,8 +99,6 @@
         // Callback takePhoto
         function callbackPhoto(obj) {
 
-
-
         setTitle(obj.photo);
         }
 
@@ -144,21 +129,11 @@
 	<body>
     	<h1 id="title">Zelle Sdk</h1>
 
-        <div>
-        <label for="Contact Name"  id="contactname" ></label>
-        </div>
-        <br><br>
-
-        <div>
-        <label for="Contact No:"  id="contactnum" ></label>
-        </div>
-        <br><br>
-
 		    <div>
 		    <label for="name">Name:</label>
 		    <input type="value" id="name" placeholder="Enter name" name="name">
   		  </div>
-
+        
         <br><br>
 
     		<button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
