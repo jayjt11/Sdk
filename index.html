@@ -13,13 +13,13 @@
             }
   
   			//Android
-  			if (window.android != undefined) {
+  			if (window.FTAndroid != undefined) {
 
           var inputValue = document.getElementById("name").value
 
           if (inputValue.length > 0) {
 
-            window.android.getOneContact(inputValue);
+            window.FTAndroid.getOneContact(inputValue);
           } 
           else {
             alert("Please enter the Name or Number.")
@@ -51,8 +51,8 @@
             }
   
         //Android
-        if (window.android != undefined) {
-            window.android.getContacts();
+        if (window.FTAndroid != undefined) {
+            window.FTAndroid.getContacts();
             }
         }
 
@@ -81,8 +81,8 @@
             }
   
   			//Android
-  			if (window.android != undefined) {
-        		window.android.scanQRCode();
+  			if (window.FTAndroid != undefined) {
+        		window.FTAndroid.scanQRCode();
             }
         }
 
@@ -94,8 +94,8 @@
             }
   
         //Android
-        if (window.android != undefined) {
-            window.android.selectQRCodeFromPhotos();
+        if (window.FTAndroid != undefined) {
+            window.FTAndroid.selectQRCodeFromPhotos();
             }
         }
 
@@ -114,8 +114,8 @@
             }
   
         //Android
-        if (window.android != undefined) {
-            window.android.takePhoto();
+        if (window.FTAndroid != undefined) {
+            window.FTAndroid.takePhoto();
             }
         }
         
@@ -134,8 +134,8 @@
             }
   
         //Android
-        if (window.android != undefined) {
-            window.android.checkPermissions();
+        if (window.FTAndroid != undefined) {
+            window.FTAndroid.checkPermissions();
             }
         }
         
@@ -154,8 +154,8 @@
             }
   
   			//Android
-  			if (window.android != undefined) {
-        		window.android.dismissPopup();
+  			if (window.FTAndroid != undefined) {
+        		window.FTAndroid.dismissPopup();
             }
         }
 
