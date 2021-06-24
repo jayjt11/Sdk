@@ -34,7 +34,14 @@
 
         // Callback Single Contact
         function callbackOneContact(obj) {
-        setTitle(obj.contact);
+
+          var result = obj.contact
+          var fields = result.split(',');
+          var name = fields[0];
+          var number = fields[1];
+          alert( "Name : " +name + "\n" + "Number : " + number)
+
+       // setTitle(obj.contact);
         }
 
         // All Contacts
