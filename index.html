@@ -20,7 +20,20 @@
 
         // Callback Single Contact
         function callbackOneContact(obj) {
-        setTitle(obj.contact);
+
+          if (obj != undefined) {
+
+          } else {
+
+         // setTitle(obj.contact);
+
+          var result = obj.contact
+
+
+          var contactName = document.getElementById("contactname");
+          contactName.innerHTML = result;
+
+          }
         }
 
         // All Contacts
@@ -80,8 +93,6 @@
 
         // Callback Qr code
         function callbackQRCode(obj) {
-
-        alert(obj.code)
         setTitle(obj.code);
         }
 
@@ -96,6 +107,14 @@
         if (window.android != undefined) {
             window.android.takePhoto();
             }
+        }
+
+        // Callback takePhoto
+        function callbackPhoto(obj) {
+
+
+
+        setTitle(obj.photo);
         }
 
         
@@ -125,10 +144,21 @@
 	<body>
     	<h1 id="title">Zelle Sdk</h1>
 
+        <div>
+        <label for="Contact Name"  id="contactname" ></label>
+        </div>
+        <br><br>
+
+        <div>
+        <label for="Contact No:"  id="contactnum" ></label>
+        </div>
+        <br><br>
+
 		    <div>
 		    <label for="name">Name:</label>
 		    <input type="value" id="name" placeholder="Enter name" name="name">
   		  </div>
+
         <br><br>
 
     		<button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
