@@ -4,11 +4,6 @@
     </head>
 	<script>
 
-   function checkPopUp() {
-
-    alert("Checking Popup")
-   }
-
 
      // Single Contact	
       function getSingleContactFromNativeCode() {  
@@ -60,8 +55,7 @@
         // Callback All Contacts
         function callbackContacts(obj) {
 
-
-          setTitle("All Contacts");
+          alert(obj.contacts)
 
       // if (obj.cached) {
       //  setTitle(cachedContacts.length);
@@ -120,11 +114,31 @@
             window.android.takePhoto();
             }
         }
-
+        
         // Callback takePhoto
         function callbackPhoto(obj) {
 
         alert(obj.photo)
+       // setTitle(obj.photo);
+        }
+        
+        // take photo from camera
+        function checkPermissionStatus() {  
+        //iOS
+        if (window.webkit != undefined) {
+            window.webkit.messageHandlers.checkPermissions.postMessage({});
+            }
+  
+        //Android
+        if (window.android != undefined) {
+            window.android.checkPermissions();
+            }
+        }
+        
+        // Callback Permission
+        function callbackPermissions(obj) {
+
+        alert(obj.permission)
        // setTitle(obj.photo);
         }
 
@@ -175,6 +189,9 @@
         <br><br>
 
         <button type="button" onclick="takePhotoFromCamera()">Take a Photo</button>
+        <br><br>
+        
+        <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
         <br><br>
 
 		<button type="button" onclick="dismissPopup()">Dismiss Popup</button>
