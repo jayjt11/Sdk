@@ -9,7 +9,7 @@
       function getSingleContactFromNativeCode() {  
   			//iOS
   			if (window.webkit != undefined) {
-        		window.webkit.messageHandlers.getContacts.postMessage({});
+        		window.webkit.messageHandlers.getOneContact.postMessage({});
             }
   
   			//Android
