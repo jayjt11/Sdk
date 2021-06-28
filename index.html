@@ -29,6 +29,14 @@
 
         // Callback Single Contact
         function callbackOneContact(obj) {
+        
+        if (window.webkit != undefined) {
+        
+        alert("welcome to iOS")
+        }
+        
+        if (window.FTAndroid != undefined) {
+        
           var result = obj.contact
           if(result.includes("Contact Not")) {
           alert(result)
@@ -39,6 +47,8 @@
           var number = fields[1];
           alert( "Name : " +name + "\n" + "Number : " + number)
           }
+        }
+        
 
        // setTitle(obj.contact);
         }
@@ -70,6 +80,7 @@
 
         // Callback Contacts Count
         function contactCount(count) {
+        
 			setTitle(count + ' Contact(s)')
         }
 
