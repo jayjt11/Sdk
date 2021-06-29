@@ -14,16 +14,7 @@
   
   			//Android
   			if (window.FTAndroid != undefined) {
-
-          var inputValue = document.getElementById("name").value
-
-          if (inputValue.length > 0) {
-
-            window.FTAndroid.getOneContact(inputValue);
-          } 
-          else {
-            alert("Please enter the Name or Number.")
-          }
+            window.FTAndroid.getOneContact();
             }
         }
 
@@ -32,7 +23,8 @@
         
         if (window.webkit != undefined) {
         
-        alert("welcome to iOS")
+        var result = obj.contact
+        setTitle(result);
         }
         
         if (window.FTAndroid != undefined) {
