@@ -153,18 +153,7 @@
         // Callback Permission
         function callbackPermissions(obj) {
 
-		//iOS
-		if (window.webkit != undefined) {
-		
-		setTitle(obj.permission);
-		}
-		//Android
-        if (window.FTAndroid != undefined) {
-            alert(obj.permission)
-            }
-        }
-		
-		
+        alert(obj.permission)
        // setTitle(obj.photo);
         }
 
@@ -198,14 +187,6 @@
 	
     	<h1 id="title">Zelle Sdk</h1>
 
-		   <!-- 
- <div>
-		    <label for="name">Name:</label>
-		    <input type="value" id="name" placeholder="Enter name" name="name">
-  		  </div>
-
-        <br><br>
- -->
 
     		<button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
     		<br><br>
