@@ -152,9 +152,17 @@
         
         // Callback Permission
         function callbackPermissions(obj) {
+        
+        //iOS
+        if (window.webkit != undefined) {
+             setTitle(obj.permission);
+            }
+  
+        //Android
+        if (window.FTAndroid != undefined) {
+           alert(obj.permission)
+            }
 
-        alert(obj.permission)
-       // setTitle(obj.photo);
         }
 
         
