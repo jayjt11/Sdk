@@ -23,8 +23,16 @@
         
         if (window.webkit != undefined) {
         
-        var result = obj.contact
-        setTitle(result);
+          var result = obj.contact
+          if(result.includes("Contact Not")) {
+          alert(result)
+          }
+          else {
+          var fields = result.split(',');
+          var name = fields[0];
+          var number = fields[1];
+          alert( "Name : " +name + "\n" + "Number : " + number)
+          
         }
         
         if (window.FTAndroid != undefined) {
