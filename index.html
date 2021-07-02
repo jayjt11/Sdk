@@ -29,10 +29,10 @@
           alert(result)
           }
           else {
-          var fields = result.split(',');
-          var name = fields[0];
-          var number = fields[1];
-          alert( "Name : " +name + "\n" + "Number : " + number)
+          
+          var strResult = JSON.parse(result);
+        
+          alert( "Name : " +strResult.name)
           }
         }
         
