@@ -160,6 +160,7 @@
       var img = document.createElement('img');
       var baseStr64 = obj.photo;
       img.setAttribute('src', "data:image/jpg;base64," + baseStr64);
+      img.width = img.height = "50";
       document.getElementById('body').appendChild(img);
     }
     else {
