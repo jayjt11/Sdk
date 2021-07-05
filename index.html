@@ -138,10 +138,35 @@
     }
   }
 
+  // select photo from gallery
+  function selectPhotoFromGallery() {
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.selectFromPhotos.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.takePhoto();
+    }
+  }
+
   // Callback takePhoto
   function callbackPhoto(obj) {
 
-    alert(obj.photo);
+    //iOS
+    if (window.webkit != undefined) {
+
+      var img = document.createElement('img');
+      var baseStr64 = obj.photo;
+      img.setAttribute('src', "data:image/jpg;base64," + baseStr64);
+      document.getElementById('body').appendChild(img);
+    }
+    else {
+
+      alert(obj.photo);
+    }
+
     // setTitle(obj.photo);
   }
 
@@ -198,7 +223,7 @@
 
 </script>
 
-<body>
+<body id="body">
 
   <center>
 
@@ -220,11 +245,16 @@
     <button type="button" onclick="takePhotoFromCamera()">Take a Photo</button>
     <br><br>
 
+    <button type="button" onclick="selectPhotoFromGallery()">Select Photo from Gallery</button>
+    <br><br>
+
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
     <br><br>
 
     <button type="button" onclick="dismissPopup()">Dismiss Popup</button>
     <script> titleToColor('Blue')</script>
+
+
 
   </center>
 </body>
