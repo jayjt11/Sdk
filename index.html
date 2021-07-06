@@ -167,8 +167,36 @@
 
       alert(obj.photo);
     }
-
     // setTitle(obj.photo);
+  }
+
+  // share photo
+  function sharePhotoClicked() {
+
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.sharePhoto.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.sharePhoto();
+    }
+
+  }
+
+  // share text
+  function shareTextClicked() {
+
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.shareText.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.shareText();
+    }
   }
 
   // take photo from camera
@@ -247,6 +275,12 @@
     <br><br>
 
     <button type="button" onclick="selectPhotoFromGallery()">Select Photo from Gallery</button>
+    <br><br>
+
+    <button type="button" onclick="sharePhotoClicked()">Share Photo</button>
+    <br><br>
+
+    <button type="button" onclick="shareTextClicked()">Share Text</button>
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
