@@ -199,6 +199,20 @@
     }
   }
 
+  // session timeout
+  function sessionTimeoutClicked() {
+
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.sessionTimeout.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.sessionTimeout();
+    }
+  }
+
   // take photo from camera
   function checkPermissionStatus() {
     //iOS
@@ -281,6 +295,9 @@
     <br><br>
 
     <button type="button" onclick="shareTextClicked()">Share Text</button>
+    <br><br>
+
+    <button type="button" onclick="sessionTimeoutClicked()">Session Timeout</button>
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
