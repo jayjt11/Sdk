@@ -75,7 +75,8 @@
     if (window.webkit != undefined) {
 
       var result = obj.cached
-      var jsonResult = SON.stringify(result)
+
+      var jsonResult = JSON.stringify(result)
 
       alert(jsonResult)
     } else {
