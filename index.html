@@ -74,7 +74,10 @@
     //iOS
     if (window.webkit != undefined) {
 
-      alert(obj.cached)
+      var result = obj.cached
+      var jsonResult = SON.stringify(result)
+
+      alert(jsonResult)
     } else {
       alert(obj.contacts)
     }
