@@ -166,11 +166,11 @@
         alert(result)
       }
       else {
-        var img = document.getElementById("photo");
+        var img = document.createElement('img');
         var baseStr64 = result;
         img.setAttribute('src', "data:image/jpg;base64," + baseStr64);
         img.width = img.height = "150";
-        // document.getElementById('body').appendChild(img);
+        document.getElementById('body').appendChild(img);
       }
     }
     else {
@@ -336,10 +336,6 @@
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
     <br><br>
-
-    <br><br>
-
-    <img id="photo" onerror="this.style.display='none';" />
 
     <button type="button" onclick="dismissPopup()">Dismiss Popup</button>
     <script> titleToColor('Blue')</script>
