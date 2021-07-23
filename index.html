@@ -172,14 +172,33 @@
         img.width = img.height = "150";
         document.getElementById('body').appendChild(img);
       }
-
-
     }
     else {
 
       alert(obj.photo);
     }
     // setTitle(obj.photo);
+  }
+
+  // location
+  function locationClicked() {
+
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.getLocation.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.getLocation();
+    }
+  }
+
+  // Callback location
+  function callbackLocation(obj) {
+
+    alert(obj.location)
+    // setTitle(obj.code);
   }
 
   // share photo
@@ -301,6 +320,9 @@
     <br><br>
 
     <button type="button" onclick="selectPhotoFromGallery()">Select Photo from Gallery</button>
+    <br><br>
+
+    <button type="button" onclick="locationClicked()">Geolocation</button>
     <br><br>
 
     <button type="button" onclick="sharePhotoClicked()">Share Photo</button>
