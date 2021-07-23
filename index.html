@@ -160,13 +160,14 @@
     if (window.webkit != undefined) {
 
       var result = obj.photo;
+      var img = null;
       if (result.includes("Camera")) {
         alert(result)
       } else if (result.includes("permission")) {
         alert(result)
       }
       else {
-        var img = document.createElement('img');
+        img = document.createElement('img');
         var baseStr64 = result;
         img.setAttribute('src', "data:image/jpg;base64," + baseStr64);
         img.width = img.height = "150";
