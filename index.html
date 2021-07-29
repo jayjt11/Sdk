@@ -80,7 +80,11 @@
 
       if (obj.cached == true) {
 
-        alert("Cached Successfully")
+        var stored = localStorage['data'];
+        var result = JSON.stringify(myVar);
+
+        alert("Result " + result);
+
       }
 
 
