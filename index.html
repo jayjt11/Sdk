@@ -81,7 +81,8 @@
       if (obj.cached == true) {
 
         // var stored = localStorage['cachedContacts'];
-        var result = JSON.stringify(cachedContacts);
+        // var result = JSON.stringify(cachedContacts);
+        var result = JSON.parse(cachedContacts);
 
         alert("Result " + result);
 
