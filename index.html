@@ -86,7 +86,8 @@
 
         // var name = cachedContacts[0].name;
 
-        var result = JSON.stringify(cachedContacts);
+        var json = JSON.parse(cachedContacts);
+        var result = JSON.stringify(json);
 
         alert("Result " + result);
 
