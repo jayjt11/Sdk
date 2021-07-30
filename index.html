@@ -77,8 +77,10 @@
     if (window.webkit != undefined) {
 
       // alert(obj.cached)
-      var result = cachedContacts.length;
-      alert("Result " + cachedContacts);
+      //  var result = cachedContacts.length;
+      var result = JSON.stringify(cachedContacts);
+
+      alert("Result " + result);
 
     } else {
       alert(obj.contacts)
