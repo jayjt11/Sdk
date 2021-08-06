@@ -59,6 +59,7 @@
 
   // All Contacts
   function getContactsFromNativeCode() {
+
     //iOS
     if (window.webkit != undefined) {
       window.webkit.messageHandlers.getContacts.postMessage({});
@@ -310,6 +311,9 @@
 
 
     <button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
+    <br><br>
+
+    <button type="button" onclick="getSingleContactFromNativeCode()">Get New Contacts</button>
     <br><br>
 
     <button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
