@@ -59,7 +59,6 @@
 
   // All Contacts
   function getContactsFromNativeCode() {
-
     //iOS
     if (window.webkit != undefined) {
       window.webkit.messageHandlers.getContacts.postMessage({});
@@ -77,11 +76,13 @@
     //iOS
     if (window.webkit != undefined) {
 
-      // alert(obj.cached)
+      alert(obj.cached)
       //  var result = cachedContacts.length;
-      var result = JSON.stringify(cachedContacts);
 
+      /* Working Code
+      var result = JSON.stringify(cachedContacts);
       alert("Result " + result);
+      */
 
     } else {
       alert(obj.contacts)
@@ -311,9 +312,6 @@
 
 
     <button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
-    <br><br>
-
-    <button type="button" onclick="getSingleContactFromNativeCode()">Get New Contacts</button>
     <br><br>
 
     <button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
