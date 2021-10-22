@@ -200,11 +200,30 @@
       window.FTAndroid.getLocation();
     }
   }
-
   // Callback location
   function callbackLocation(obj) {
 
     alert(obj.location)
+    // setTitle(obj.code);
+  }
+
+  // device Info
+  function deviceInfoClicked() {
+
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.getDeviceInfo.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.getLocation();
+    }
+  }
+
+  // Callback device Info
+  function callbackDeviceInfo(obj) {
+    alert(obj.data)
     // setTitle(obj.code);
   }
 
@@ -331,6 +350,9 @@
     <br><br>
 
     <button type="button" onclick="locationClicked()">Geolocation</button>
+    <br><br>
+
+    <button type="button" onclick="deviceInfoClicked()">Device Info</button>
     <br><br>
 
     <button type="button" onclick="sharePhotoClicked()">Share Photo</button>
