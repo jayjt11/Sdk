@@ -76,12 +76,14 @@
     //iOS
     if (window.webkit != undefined) {
 
-      alert(obj)
+      var result = JSON.stringify(obj);
+       alert("Result " + result);
+      //alert(obj)
       //  var result = cachedContacts.length;
 
       /* Working Code
-      var result = JSON.stringify(cachedContacts);
-      alert("Result " + result);
+       var result = JSON.stringify(cachedContacts);
+       alert("Result " + result);
       */
 
     } else {
