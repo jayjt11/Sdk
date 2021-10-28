@@ -225,7 +225,20 @@
 
   // Callback device Info
   function callbackDeviceInfo(obj) {
-    alert(obj.data)
+   
+   // alert(obj.data)
+
+   //iOS
+   if (window.webkit != undefined) {
+
+    var deviceData = obj.data;
+      var result = JSON.stringify(deviceData);
+       alert("Device Info " + result);
+   }
+
+
+    
+
     // setTitle(obj.code);
   }
 
