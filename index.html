@@ -76,12 +76,14 @@
     //iOS
     if (window.webkit != undefined) {
 
-      alert(obj.cached)
-      //  var result = cachedContacts.length;
+     // alert(obj.cached)
+      var cachedData = obj.cached;
+      var result = JSON.stringify(cachedData);
+       alert("Status " + result);
 
       /* Working Code
-      var result = JSON.stringify(cachedContacts);
-      alert("Result " + result);
+      // var result = JSON.stringify(cachedContacts);
+      // alert("Result " + result);
       */
 
     } else {
