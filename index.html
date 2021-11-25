@@ -257,6 +257,21 @@
 
   }
 
+  // share photo
+  function printPhotoClicked() {
+
+//iOS
+if (window.webkit != undefined) {
+  window.webkit.messageHandlers.printPhoto.postMessage(BASE64, "", "");
+}
+
+//Android
+if (window.FTAndroid != undefined) {
+  window.FTAndroid.printPhoto(BASE64, "", "");
+}
+
+}
+
   // share text
   function shareTextClicked() {
 
@@ -370,6 +385,9 @@
     <br><br>
 
     <button type="button" onclick="sharePhotoClicked()">Share Photo</button>
+    <br><br>
+
+    <button type="button" onclick="printPhotoClicked()">Print Photo</button>
     <br><br>
 
     <button type="button" onclick="shareTextClicked()">Share Text</button>
