@@ -291,7 +291,8 @@ if (window.FTAndroid != undefined) {
 
     //iOS
     if (window.webkit != undefined) {
-      window.webkit.messageHandlers.sessionTimeout.postMessage({});
+    var tag = "session_timeout";
+      window.webkit.messageHandlers.sessionTimeout.postMessage(tag);
     }
 
     //Android
