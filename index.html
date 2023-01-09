@@ -168,8 +168,14 @@
 
   // Callback Qr code
   function callbackLogInfo(obj) {
-  alert(obj.log)
-// setTitle(obj.code);
+
+    if (window.webkit != undefined) {
+    var loggedData = obj.log;
+    var result = JSON.stringify(loggedData);
+    alert("Logged data " + result);
+  } else {
+    alert(obj.log)
+  }
 } 
 
 
