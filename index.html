@@ -169,13 +169,17 @@
   // Callback Qr code
   function callbackLogInfo(obj) {
 
-    if (window.webkit != undefined) {
-    var loggedData = obj.log;
+    var loggedData = obj.data;
     var result = JSON.stringify(loggedData);
     alert("Logged data " + result);
-  } else {
-    alert(obj.log)
-  }
+
+  //   if (window.webkit != undefined) {
+  //   var loggedData = obj.data;
+  //   var result = JSON.stringify(loggedData);
+  //   alert("Logged data " + result);
+  // } else {
+  //   alert(obj.log)
+  // }
 } 
 
 
