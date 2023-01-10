@@ -101,6 +101,21 @@
     // }
   }
 
+  // Callback LogInfo
+  function callbackLogInfo(obj) {
+
+   //iOS
+   if (window.webkit != undefined) {
+
+    var cachedData = obj.user;
+    var result = JSON.stringify(cachedData);
+      alert("Status " + result);
+
+    } else {
+      alert(obj.user)
+    }
+} 
+
   // Callback Contacts Count
   function contactCount(count) {
 
@@ -165,23 +180,6 @@
       window.FTAndroid.takePhoto();
     }
   }
-
-  // Callback Qr code
-  function callbackLogInfo(obj) {
-
-    var loggedData = obj.data;
-    var result = JSON.stringify(loggedData);
-    alert("Logged data " + result);
-
-  //   if (window.webkit != undefined) {
-  //   var loggedData = obj.data;
-  //   var result = JSON.stringify(loggedData);
-  //   alert("Logged data " + result);
-  // } else {
-  //   alert(obj.log)
-  // }
-} 
-
 
   // Callback takePhoto
   function callbackPhoto(obj) {
