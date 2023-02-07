@@ -258,6 +258,36 @@
    }
 
 
+   //  Network Status
+  function checkNetworkStatusClicked() {
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.checkNetworkStatus.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.checkNetworkStatus();
+    }
+  }
+
+  // Callback Network Status
+  function callbackNetworkStatus(obj) {
+    
+
+    //iOS
+    if (window.webkit != undefined) {
+
+      var deviceData = obj.status;
+        var result = JSON.stringify(deviceData);
+
+        if(result === true) {
+          alert("Device has network connection");
+        } else {
+          alert("Device has no network connection ");
+        }
+    }
+
     
 
     // setTitle(obj.code);
@@ -440,6 +470,9 @@ if (window.FTAndroid != undefined) {
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
+    <br><br>
+
+    <button type="button" onclick="checkNetworkStatusClicked()">Check Network Status</button>
     <br><br>
 
     <button type="button" onclick="dismissPopup()">Dismiss Popup</button>
