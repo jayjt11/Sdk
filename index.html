@@ -282,9 +282,11 @@ function checkNetworkStatusClicked() {
       var deviceData = obj.status;
         var result = JSON.stringify(deviceData);
 
-        alert("Result " + result);
+    //    alert("Result " + result);
 
-        if(result == true) {
+        var isTrueSet = (result.toLowerCase() === 'true');
+
+        if(isTrueSet) {
           alert("Device has network connection");
         } else {
           alert("Device has no network connection ");
