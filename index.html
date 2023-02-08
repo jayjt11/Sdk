@@ -282,6 +282,8 @@ function checkNetworkStatusClicked() {
       var deviceData = obj.status;
         var result = JSON.stringify(deviceData);
 
+        alert("Result " + result);
+
         if(result == true) {
           alert("Device has network connection");
         } else {
