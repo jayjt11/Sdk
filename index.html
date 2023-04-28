@@ -343,7 +343,7 @@ if (window.FTAndroid != undefined) {
 
     //iOS
     if (window.webkit != undefined) {
-      window.webkit.messageHandlers.sessionTimeout.postMessage({});
+      window.webkit.messageHandlers.sessionTimeout.postMessage(sessionTag);
     }
 
     //Android
