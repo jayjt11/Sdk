@@ -417,6 +417,46 @@ if (window.FTAndroid != undefined) {
     title.innerHTML = text;
   }
 
+
+  // Reads the OTP
+  function getOTP() {
+    //iOS
+    if (window.webkit != undefined) {
+      window.webkit.messageHandlers.readOTP.postMessage({});
+    }
+
+    //Android
+    if (window.FTAndroid != undefined) {
+      window.FTAndroid.readOTP();
+    }
+  }
+
+  // Callback Permission
+  function callbackOTP(obj) {
+
+//iOS
+if (window.webkit != undefined) {
+  alert(obj.otp);
+}
+
+//Android
+if (window.FTAndroid != undefined) {
+  alert(obj.otp);
+}
+}
+
+
+
+  function titleToColor(color) {
+    var title = document.getElementById("title");
+    title.style.color = color;
+  }
+
+  function setTitle(text) {
+    var title = document.getElementById("title");
+    title.innerHTML = text;
+  }
+
 </script>
 
 <body id="body">
@@ -431,6 +471,8 @@ if (window.FTAndroid != undefined) {
       <input type="text"/>
   </p>
 
+  <button type="button" onclick="getOTP()">OTP</button>
+  
     <button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
     <br><br>
 
@@ -477,6 +519,7 @@ if (window.FTAndroid != undefined) {
     <br><br>
 
     <button type="button" onclick="dismissPopup()">Dismiss Popup</button>
+
     <script> titleToColor('Blue')</script>
 
 
