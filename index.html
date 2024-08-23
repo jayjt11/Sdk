@@ -431,7 +431,7 @@ if (window.FTAndroid != undefined) {
     }
   }
 
-  // Callback Permission
+  // Callback OTP
   function callbackOTP(obj) {
 
 //iOS
@@ -444,8 +444,6 @@ if (window.FTAndroid != undefined) {
   alert(obj.otp);
 }
 }
-
-
 
   function titleToColor(color) {
     var title = document.getElementById("title");
@@ -467,12 +465,13 @@ if (window.FTAndroid != undefined) {
 
 
     <p>
-      <label>Enter Amounts</label>
+      <label>Enter Value</label>
       <input type="text"/>
   </p>
 
-  <button type="button" onclick="getOTP()">OTP</button>
-  
+    <button type="button" onclick="getOTP()">OTP</button>
+    <br><br>
+
     <button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
     <br><br>
 
