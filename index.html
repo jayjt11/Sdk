@@ -366,6 +366,20 @@ if (window.FTAndroid != undefined) {
 }
 }
 
+// Load Url in external browser
+function loadUrlClicked() {
+
+//iOS
+if (window.webkit != undefined) {
+  window.webkit.messageHandlers.fetchTag.postMessage("Privacy policy", "https://www.google.com/");
+}
+
+//Android
+if (window.FTAndroid != undefined) {
+  window.FTAndroid.fetchTag();
+}
+}
+
   // take photo from camera
   function checkPermissionStatus() {
     //iOS
@@ -509,6 +523,9 @@ if (window.FTAndroid != undefined) {
     <br><br>
 
     <button type="button" onclick="fetchTagClicked()">Zelle Tag</button>
+    <br><br>
+
+    <button type="button" onclick="loadUrlClicked()">Load Url</button>
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
