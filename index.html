@@ -371,7 +371,7 @@ function loadUrlClicked() {
 
 //iOS
 if (window.webkit != undefined) {
-  window.webkit.messageHandlers.fetchTag.postMessage("Privacy policy", "https://www.google.com/");
+  window.webkit.messageHandlers.fetchTag.postMessage({name: "Privacy policy", url: "https://www.google.com/"});
 }
 
 //Android
