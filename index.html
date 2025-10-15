@@ -353,11 +353,11 @@ if (window.FTAndroid != undefined) {
   }
 
   // zelle tag
-  function fetchTagClicked() {
+  function fetchTagClicked1() {
 
 //iOS
 if (window.webkit != undefined) {
-  window.webkit.messageHandlers.fetchTag.postMessage(zelleTag);
+  window.webkit.messageHandlers.fetchTag.postMessage({name: "Privacy policy"});
 }
 
 //Android
@@ -367,7 +367,7 @@ if (window.FTAndroid != undefined) {
 }
 
 // Load Url in external browser
-function loadUrlClicked() {
+function fetchTagClicked2() {
 
 //iOS
 if (window.webkit != undefined) {
@@ -522,10 +522,10 @@ if (window.FTAndroid != undefined) {
     <button type="button" onclick="sessionTimeoutClicked()">Session Timeout</button>
     <br><br>
 
-    <button type="button" onclick="fetchTagClicked()">Zelle Tag</button>
+    <button type="button" onclick="fetchTagClicked1()">fetchTagClicked1</button>
     <br><br>
 
-    <button type="button" onclick="loadUrlClicked()">Load Url</button>
+    <button type="button" onclick="fetchTagClicked2()">fetchTagClicked2</button>
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
