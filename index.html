@@ -352,6 +352,20 @@ if (window.FTAndroid != undefined) {
     }
   }
 
+
+  function fetchTagClicked0() {
+
+//iOS
+if (window.webkit != undefined) {
+  window.webkit.messageHandlers.fetchTag.postMessage(zelleTag);
+}
+
+//Android
+if (window.FTAndroid != undefined) {
+  window.FTAndroid.fetchTag();
+}
+}
+
   // zelle tag
   function fetchTagClicked1() {
 
@@ -520,6 +534,9 @@ if (window.FTAndroid != undefined) {
     <br><br>
 
     <button type="button" onclick="sessionTimeoutClicked()">Session Timeout</button>
+    <br><br>
+
+    <button type="button" onclick="fetchTagClicked0()">fetchTag0</button>
     <br><br>
 
     <button type="button" onclick="fetchTagClicked1()">fetchTag1</button>
