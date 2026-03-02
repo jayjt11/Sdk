@@ -394,6 +394,21 @@ if (window.FTAndroid != undefined) {
 }
 }
 
+
+// zelle tag
+function fetchSSOClicked() {
+
+//iOS
+if (window.webkit != undefined) {
+  window.webkit.messageHandlers.fetchSSO.postMessage({});
+}
+
+//Android
+if (window.FTAndroid != undefined) {
+  window.FTAndroid.fetchTag();
+}
+}
+
   // take photo from camera
   function checkPermissionStatus() {
     //iOS
@@ -543,6 +558,9 @@ if (window.FTAndroid != undefined) {
     <br><br>
 
     <button type="button" onclick="fetchTagClicked2()">fetchTag2</button>
+    <br><br>
+
+    <button type="button" onclick="fetchSSOClicked()">fetchSSO</button>
     <br><br>
 
     <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
